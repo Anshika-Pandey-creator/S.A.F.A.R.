@@ -242,7 +242,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col justify-between">
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-gray-200 text-slate-800 flex flex-col justify-between font-sans selection:bg-emerald-500/20 selection:text-emerald-900">
         
         {/* Patriotic Indian Flag Animated Loading Screen */}
         {showPatrioticLoader && (

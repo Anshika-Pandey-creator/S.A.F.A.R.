@@ -84,18 +84,18 @@ export default function MapView({
   return (
     <div
       style={{ height: isFullscreen ? '100vh' : height }}
-      className={`w-full relative rounded-xl overflow-hidden shadow-2xl border border-slate-800 transition-all ${
+      className={`w-full relative rounded-xl overflow-hidden shadow-md border border-slate-200 transition-all ${
         isFullscreen ? 'fixed inset-0 z-50 rounded-none' : ''
       }`}
     >
       {/* Map Control Bar Overlay */}
-      <div className="absolute top-3 right-3 z-20 flex flex-wrap items-center gap-1.5 bg-navy-900/95 backdrop-blur-md p-1.5 rounded-xl border border-slate-700 shadow-xl text-xs">
+      <div className="absolute top-3 right-3 z-20 flex flex-wrap items-center gap-1.5 bg-white/95 backdrop-blur-md p-1.5 rounded-xl border border-slate-200 shadow-md text-xs text-slate-800">
         
         {/* Map Layer Switcher */}
         <select
           value={mapProvider}
           onChange={(e) => setMapProvider(e.target.value)}
-          className="bg-slate-800/90 text-emerald-300 font-bold px-2 py-1 rounded-lg border border-slate-600 focus:outline-none focus:border-emerald-500 cursor-pointer text-xs"
+          className="bg-slate-100 text-emerald-800 font-bold px-2 py-1 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-500 cursor-pointer text-xs"
         >
           <option value="google_satellite">🛰️ Google Satellite (Ultra HD Zoom)</option>
           <option value="google_streets">🗺️ Google Streets (High Detail)</option>
@@ -106,7 +106,7 @@ export default function MapView({
         <button
           onClick={() => setShowZones(!showZones)}
           className={`p-1.5 rounded-lg flex items-center space-x-1 font-semibold transition-colors ${
-            showZones ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'text-slate-400 hover:text-white'
+            showZones ? 'bg-emerald-100 text-emerald-800 border border-emerald-300' : 'text-slate-600 hover:text-slate-900'
           }`}
           title="Toggle Zones"
         >
@@ -117,7 +117,7 @@ export default function MapView({
         <button
           onClick={() => setShowServices(!showServices)}
           className={`p-1.5 rounded-lg flex items-center space-x-1 font-semibold transition-colors ${
-            showServices ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'text-slate-400 hover:text-white'
+            showServices ? 'bg-blue-100 text-blue-800 border border-blue-300' : 'text-slate-600 hover:text-slate-900'
           }`}
           title="Toggle Services"
         >
@@ -127,7 +127,7 @@ export default function MapView({
 
         <button
           onClick={() => setIsFullscreen(!isFullscreen)}
-          className="p-1.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          className="p-1.5 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
           title="Toggle Fullscreen"
         >
           <Maximize2 className="w-3.5 h-3.5" />
@@ -135,11 +135,11 @@ export default function MapView({
       </div>
 
       {/* Map Legend */}
-      <div className="absolute bottom-3 left-3 z-20 bg-navy-900/90 backdrop-blur-md p-2 rounded-xl border border-slate-800 shadow-lg text-[10px] space-y-1">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-0.5 space-x-2">
-          <span className="font-bold text-slate-300 block">Map Engine: <span className="text-emerald-400">Max Zoom 22 HD</span></span>
+      <div className="absolute bottom-3 left-3 z-20 bg-white/95 backdrop-blur-md p-2 rounded-xl border border-slate-200 shadow-md text-[10px] space-y-1">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-0.5 space-x-2">
+          <span className="font-bold text-slate-800 block">Map Engine: <span className="text-emerald-700">Max Zoom 22 HD</span></span>
         </div>
-        <div className="flex items-center space-x-3 text-slate-300">
+        <div className="flex items-center space-x-3 text-slate-700">
           <span className="flex items-center space-x-1">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             <span>Safe</span>

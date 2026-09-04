@@ -30,8 +30,8 @@ export default function MiniMap({
   const lng = center?.lng || 91.7362;
 
   return (
-    <div className="w-full relative rounded-xl overflow-hidden border border-slate-700/80 shadow-md">
-      <div className="absolute top-2 left-2 z-20 bg-navy-900/90 backdrop-blur px-2 py-0.5 rounded text-[10px] font-bold text-slate-300 border border-slate-700">
+    <div className="w-full relative rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+      <div className="absolute top-2 left-2 z-20 bg-white/90 backdrop-blur px-2 py-0.5 rounded text-[10px] font-bold text-slate-800 border border-slate-200 shadow-sm">
         📍 {title}
       </div>
       <div style={{ height }}>

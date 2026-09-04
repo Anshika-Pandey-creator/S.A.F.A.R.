@@ -31,15 +31,15 @@ export default function AuthorityDashboard({
     <div className="space-y-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       
       {/* Top Banner Header */}
-      <div className="bg-navy-900 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="bg-[#FFD8BD]/85 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 shadow-md shadow-slate-200/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2">
-            <span className="font-extrabold text-2xl text-white">Authority Command & Safety Control Center</span>
-            <span className="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/30 uppercase tracking-widest">
+            <span className="font-extrabold text-2xl text-slate-900">Authority Command & Safety Control Center</span>
+            <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-md border border-emerald-300 uppercase tracking-widest">
               Live Monitoring Desk
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Ministry of DoNER & State Tourist Police Operations Console
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function AuthorityDashboard({
         <div className="flex flex-wrap items-center gap-2">
           <Link
             to="/geo-fence-management"
-            className="px-4 py-2 bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-500 hover:to-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-lg flex items-center space-x-1.5 transition-all"
+            className="px-4 py-2 bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-500 hover:to-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-md flex items-center space-x-1.5 transition-all"
           >
             <Settings className="w-4 h-4" />
             <span>Geo-Fence Management</span>
@@ -55,17 +55,17 @@ export default function AuthorityDashboard({
 
           <Link
             to="/incidents"
-            className="px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-300 font-bold text-xs rounded-xl border border-red-500/40 flex items-center space-x-1.5 transition-colors"
+            className="px-4 py-2 bg-red-100 hover:bg-red-200 text-red-800 font-bold text-xs rounded-xl border border-red-300 flex items-center space-x-1.5 transition-colors"
           >
-            <AlertOctagon className="w-4 h-4 text-red-400" />
+            <AlertOctagon className="w-4 h-4 text-red-600" />
             <span>Incident Command</span>
           </Link>
 
           <Link
             to="/analytics"
-            className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 flex items-center space-x-1.5 transition-colors"
+            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl border border-slate-300 flex items-center space-x-1.5 transition-colors"
           >
-            <BarChart3 className="w-4 h-4 text-teal-400" />
+            <BarChart3 className="w-4 h-4 text-teal-600" />
             <span>Analytics</span>
           </Link>
         </div>
@@ -73,60 +73,60 @@ export default function AuthorityDashboard({
 
       {/* KPI Overview Cards */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div className="p-4 rounded-2xl bg-navy-900 border border-slate-800 space-y-1">
-          <span className="text-[10px] text-slate-400 uppercase font-extrabold block">Total Active Tourists</span>
-          <span className="text-2xl font-black text-white">{totalTourists}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm space-y-1">
+          <span className="text-[10px] text-slate-500 uppercase font-extrabold block">Total Active Tourists</span>
+          <span className="text-2xl font-black text-slate-900">{totalTourists}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-navy-900 border border-amber-500/30 space-y-1">
-          <span className="text-[10px] text-amber-400 uppercase font-extrabold block">Tourists at Risk</span>
-          <span className="text-2xl font-black text-amber-400">{touristsAtRisk}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-amber-300 shadow-sm space-y-1">
+          <span className="text-[10px] text-amber-800 uppercase font-extrabold block">Tourists at Risk</span>
+          <span className="text-2xl font-black text-amber-800">{touristsAtRisk}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-navy-900 border border-red-500/30 space-y-1">
-          <span className="text-[10px] text-red-400 uppercase font-extrabold block">Active Incidents</span>
-          <span className="text-2xl font-black text-red-400">{activeIncidents}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-red-300 shadow-sm space-y-1">
+          <span className="text-[10px] text-red-800 uppercase font-extrabold block">Active Incidents</span>
+          <span className="text-2xl font-black text-red-800">{activeIncidents}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-navy-900 border border-orange-500/30 space-y-1">
-          <span className="text-[10px] text-orange-400 uppercase font-extrabold block">Geo-fence Violations</span>
-          <span className="text-2xl font-black text-orange-400">{geofenceViolations}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-orange-300 shadow-sm space-y-1">
+          <span className="text-[10px] text-orange-800 uppercase font-extrabold block">Geo-fence Violations</span>
+          <span className="text-2xl font-black text-orange-800">{geofenceViolations}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-navy-900 border border-rose-500/30 space-y-1">
-          <span className="text-[10px] text-rose-400 uppercase font-extrabold block">Active SOS Alerts</span>
-          <span className="text-2xl font-black text-rose-400">{sosAlerts}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-rose-300 shadow-sm space-y-1">
+          <span className="text-[10px] text-rose-800 uppercase font-extrabold block">Active SOS Alerts</span>
+          <span className="text-2xl font-black text-rose-800">{sosAlerts}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-navy-900 border border-emerald-500/30 space-y-1">
-          <span className="text-[10px] text-emerald-400 uppercase font-extrabold block">Resolved Incidents</span>
-          <span className="text-2xl font-black text-emerald-400">{resolvedIncidents}</span>
+        <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-emerald-300 shadow-sm space-y-1">
+          <span className="text-[10px] text-emerald-800 uppercase font-extrabold block">Resolved Incidents</span>
+          <span className="text-2xl font-black text-emerald-800">{resolvedIncidents}</span>
         </div>
       </div>
 
       {/* Self-Learning AI Feedback Loop Status Banner */}
-      <div className="bg-slate-900/90 border border-emerald-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+      <div className="bg-white/90 border border-emerald-300 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold shrink-0">
-            <Activity className="w-5 h-5 animate-pulse" />
+          <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center font-bold shrink-0">
+            <Activity className="w-5 h-5 animate-pulse text-emerald-600" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">
+              <span className="text-xs font-black text-emerald-800 uppercase tracking-widest">
                 Self-Learning AI Feedback Engine
               </span>
-              <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-500/30">
+              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-300">
                 ACTIVE RETRAINING
               </span>
             </div>
-            <p className="text-[11px] text-slate-300">
+            <p className="text-[11px] text-slate-600">
               Anonymized resolved incident logs automatically retrain the AI Risk Model to improve hazard prediction accuracy over time.
             </p>
           </div>
         </div>
         <div className="text-right shrink-0">
-          <div className="text-xs font-mono font-bold text-slate-200">Total Retrained Cases: {resolvedIncidents + 12}</div>
-          <div className="text-[10px] font-mono text-emerald-400">Prediction Accuracy: 98.4%</div>
+          <div className="text-xs font-mono font-bold text-slate-900">Total Retrained Cases: {resolvedIncidents + 12}</div>
+          <div className="text-[10px] font-mono text-emerald-700 font-bold">Prediction Accuracy: 98.4%</div>
         </div>
       </div>
 
@@ -136,21 +136,21 @@ export default function AuthorityDashboard({
         {/* Left Column (2 Cols): Live Leaflet Command Map */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center space-x-1">
-              <Radio className="w-4 h-4 text-emerald-400 animate-pulse" />
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center space-x-1">
+              <Radio className="w-4 h-4 text-emerald-600 animate-pulse" />
               <span>Live Risk-Monitored Tourist Map</span>
             </span>
 
             <div className="flex items-center space-x-1 text-xs">
-              <span className="text-slate-400 mr-1 hidden sm:inline">Filter Risk:</span>
+              <span className="text-slate-500 mr-1 hidden sm:inline">Filter Risk:</span>
               {['ALL', 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].map((tier) => (
                 <button
                   key={tier}
                   onClick={() => setFilterRisk(tier)}
                   className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                     filterRisk === tier
-                      ? 'bg-emerald-500 text-white'
-                      : 'bg-slate-800 text-slate-400 hover:text-white'
+                      ? 'bg-emerald-600 text-white'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
                   {tier}
@@ -168,41 +168,41 @@ export default function AuthorityDashboard({
           />
 
           {/* Active Incidents Feed Table */}
-          <div className="bg-navy-900 border border-slate-800 rounded-2xl p-4 space-y-3">
+          <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-4 space-y-3 shadow-md">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white uppercase tracking-wider">
+              <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                 Live Active Incidents Feed ({activeIncidents})
               </span>
-              <Link to="/incidents" className="text-xs text-emerald-400 hover:underline font-bold">
+              <Link to="/incidents" className="text-xs text-emerald-700 hover:underline font-bold">
                 View All Incidents →
               </Link>
             </div>
 
-            <div className="divide-y divide-slate-800">
+            <div className="divide-y divide-slate-100">
               {incidents.filter((i) => i.status !== 'RESOLVED').length === 0 ? (
-                <p className="text-xs text-slate-400 p-4 text-center">No active emergency incidents</p>
+                <p className="text-xs text-slate-500 p-4 text-center">No active emergency incidents</p>
               ) : (
                 incidents.filter((i) => i.status !== 'RESOLVED').map((inc) => (
                   <div key={inc.id} className="py-3 space-y-2">
                     <div className="flex items-center justify-between text-xs">
                       <div className="space-y-0.5">
                         <div className="flex items-center space-x-2">
-                          <span className="font-mono font-bold text-red-400">{inc.id}</span>
-                          <span className="font-bold text-white">{inc.touristName}</span>
+                          <span className="font-mono font-bold text-red-700">{inc.id}</span>
+                          <span className="font-bold text-slate-900">{inc.touristName}</span>
                           <span
                             className={`px-1.5 py-0.2 rounded text-[9px] font-bold uppercase ${
-                              inc.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
+                              inc.severity === 'CRITICAL' ? 'bg-red-100 text-red-800 border border-red-200' : 'bg-orange-100 text-orange-800 border border-orange-200'
                             }`}
                           >
                             {inc.severity}
                           </span>
                         </div>
-                        <p className="text-slate-400 text-[11px]">{inc.description}</p>
+                        <p className="text-slate-600 text-[11px]">{inc.description}</p>
                       </div>
 
                       <button
                         onClick={() => onUpdateIncidentStatus(inc.id, 'IN_PROGRESS', 'Assam Tourist Police HQ')}
-                        className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-emerald-400 rounded text-[11px] font-bold shrink-0 ml-2"
+                        className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-emerald-800 border border-slate-300 rounded text-[11px] font-bold shrink-0 ml-2"
                       >
                         Dispatch Team
                       </button>
@@ -227,8 +227,8 @@ export default function AuthorityDashboard({
 
         {/* Right Column (1 Col): Monitored Tourist Telemetry Drawer */}
         <div className="space-y-4">
-          <div className="bg-navy-900 border border-slate-800 rounded-2xl p-4 space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-wider text-slate-300 block">
+          <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-4 space-y-3 shadow-md">
+            <span className="text-xs font-extrabold uppercase tracking-wider text-slate-800 block">
               Active Monitored Tourists ({filteredTourists.length})
             </span>
 
@@ -239,33 +239,33 @@ export default function AuthorityDashboard({
                   onClick={() => setSelectedTourist(t)}
                   className={`p-3 rounded-xl border transition-all cursor-pointer text-xs space-y-2 ${
                     selectedTourist?.touristId === t.touristId
-                      ? 'bg-slate-800 border-emerald-500 shadow-lg'
-                      : 'bg-slate-800/50 border-slate-700/60 hover:border-slate-600'
+                      ? 'bg-slate-100 border-emerald-600 shadow-md'
+                      : 'bg-slate-50 border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-white">{t.fullName}</span>
+                    <span className="font-bold text-slate-900">{t.fullName}</span>
                     <span
                       className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${
                         t.riskLevel === 'CRITICAL'
-                          ? 'bg-red-500/20 text-red-400'
+                          ? 'bg-red-100 text-red-800 border border-red-200'
                           : t.riskLevel === 'HIGH'
-                          ? 'bg-orange-500/20 text-orange-400'
+                          ? 'bg-orange-100 text-orange-800 border border-orange-200'
                           : t.riskLevel === 'MEDIUM'
-                          ? 'bg-amber-500/20 text-amber-400'
-                          : 'bg-emerald-500/20 text-emerald-400'
+                          ? 'bg-amber-100 text-amber-800 border border-amber-200'
+                          : 'bg-emerald-100 text-emerald-800 border border-emerald-200'
                       }`}
                     >
                       {t.riskLevel} ({t.riskScore}/100)
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between text-[11px] text-slate-400">
+                  <div className="flex items-center justify-between text-[11px] text-slate-500">
                     <span className="font-mono">{t.touristId}</span>
-                    <span>Status: <strong className="text-slate-200">{t.status}</strong></span>
+                    <span>Status: <strong className="text-slate-800">{t.status}</strong></span>
                   </div>
 
-                  <p className="text-[10px] text-slate-400 truncate">
+                  <p className="text-[10px] text-slate-600 truncate">
                     📍 {t.currentLocation?.address || 'Guwahati Safe Region'}
                   </p>
 
@@ -280,11 +280,11 @@ export default function AuthorityDashboard({
                   )}
 
                   <div className="pt-1 flex items-center justify-between text-[10px]">
-                    <span className="text-emerald-400 font-semibold">📞 {t.mobileNumber}</span>
+                    <span className="text-emerald-700 font-semibold">📞 {t.mobileNumber}</span>
                     <Link
                       to={`/verify-id/${t.touristId}`}
                       target="_blank"
-                      className="text-slate-300 hover:text-white font-semibold underline flex items-center space-x-0.5"
+                      className="text-slate-600 hover:text-slate-900 font-semibold underline flex items-center space-x-0.5"
                     >
                       <span>Audit ID</span>
                       <ExternalLink className="w-2.5 h-2.5" />

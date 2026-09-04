@@ -102,15 +102,15 @@ export default function PatrioticLoader({ onLoadingComplete }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, scale: 1.03 }}
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-        className="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center overflow-hidden select-none"
+        className="fixed inset-0 z-[9999] bg-gradient-to-br from-slate-100 via-slate-50 to-gray-200 flex items-center justify-center overflow-hidden select-none"
       >
         {/* Ambient Glowing Orbs (Saffron, White, Green Tricolor Atmosphere) */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-emerald-600/20 rounded-full blur-[120px] pointer-events-none animate-pulse" />
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange-400/20 rounded-full blur-[120px] pointer-events-none animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-emerald-400/20 rounded-full blur-[120px] pointer-events-none animate-pulse" />
 
         {/* Futuristic Subtle Grid Pattern Overlay */}
-        <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
+        <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
 
         {/* Central Graphic Container */}
         <div className="relative z-10 w-full max-w-2xl px-6 py-8 mx-auto text-center space-y-7">
@@ -120,12 +120,12 @@ export default function PatrioticLoader({ onLoadingComplete }) {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-amber-500/30 text-xs font-extrabold text-amber-300 shadow-xl"
+            className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-slate-300 text-xs font-extrabold text-amber-800 shadow-lg"
           >
             <span className="text-sm">🇮🇳</span>
             <span>GOVERNMENT OF INDIA</span>
-            <span className="text-slate-500">•</span>
-            <span className="text-emerald-400">MINISTRY OF DoNER</span>
+            <span className="text-slate-400">•</span>
+            <span className="text-emerald-700">MINISTRY OF DoNER</span>
           </motion.div>
 
           {/* HIGH-GRAPHIC TRICOLOR FLAG EMBLEM CARD */}
@@ -133,9 +133,9 @@ export default function PatrioticLoader({ onLoadingComplete }) {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative w-full rounded-3xl p-1 bg-gradient-to-b from-amber-500/40 via-slate-100/30 to-emerald-500/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl overflow-hidden"
+            className="relative w-full rounded-3xl p-1 bg-gradient-to-b from-amber-400/40 via-white/80 to-emerald-400/40 shadow-[0_20px_50px_rgba(0,0,0,0.12)] backdrop-blur-xl overflow-hidden"
           >
-            <div className="bg-slate-950/95 rounded-[22px] p-4 sm:p-6 space-y-4 border border-slate-800">
+            <div className="bg-white/95 rounded-[22px] p-4 sm:p-6 space-y-4 border border-slate-200">
               
               {/* 1. SAFFRON BAND — Top-Right Sweep */}
               <motion.div
@@ -190,7 +190,7 @@ export default function PatrioticLoader({ onLoadingComplete }) {
                 </div>
 
                 <div className="hidden sm:flex items-center space-x-1 text-navy-950 font-extrabold text-[11px] uppercase tracking-wider">
-                  <span>SIH25002</span>
+                  <span>SIH26207</span>
                 </div>
               </motion.div>
 
@@ -220,11 +220,11 @@ export default function PatrioticLoader({ onLoadingComplete }) {
             transition={{ delay: 0.55, duration: 0.6 }}
             className="space-y-1.5"
           >
-            <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-md">
-              SafeTour <span className="bg-gradient-to-r from-orange-400 via-slate-100 to-emerald-400 bg-clip-text text-transparent">NE</span>
+            <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 drop-shadow-sm">
+              S.A.F.A.R. <span className="bg-gradient-to-r from-orange-600 via-amber-500 to-emerald-600 bg-clip-text text-transparent"></span>
             </h1>
-            <p className="text-xs text-slate-300 font-semibold max-w-lg mx-auto">
-              Smart Tourist Safety Monitoring & Incident Response System (SIH Problem Statement SIH25002)
+            <p className="text-xs text-slate-600 font-semibold max-w-lg mx-auto">
+              Smart Tourist Safety Monitoring & Incident Response System (SIH Problem Statement SIH26207)
             </p>
           </motion.div>
 
@@ -233,24 +233,24 @@ export default function PatrioticLoader({ onLoadingComplete }) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.65, duration: 0.6 }}
-            className="space-y-3 bg-slate-900/80 backdrop-blur-md p-4 rounded-2xl border border-slate-800 shadow-xl"
+            className="space-y-3 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-slate-200/90 shadow-xl"
           >
             <div className="flex items-center justify-between text-xs font-semibold px-1">
-              <span className="flex items-center space-x-2 text-slate-300">
-                <Sparkles className="w-4 h-4 text-amber-400 animate-spin shrink-0" />
-                <span className="font-mono text-emerald-300 font-bold truncate max-w-[260px] sm:max-w-md">
+              <span className="flex items-center space-x-2 text-slate-700">
+                <Sparkles className="w-4 h-4 text-amber-500 animate-spin shrink-0" />
+                <span className="font-mono text-emerald-800 font-bold truncate max-w-[260px] sm:max-w-md">
                   {statusText}
                 </span>
               </span>
-              <span className="font-mono font-black text-amber-400 text-base tracking-wider shrink-0">
+              <span className="font-mono font-black text-amber-600 text-base tracking-wider shrink-0">
                 {progress}%
               </span>
             </div>
 
             {/* High-Graphic Loading Bar */}
-            <div className="relative w-full h-3 rounded-full bg-slate-950 border border-slate-800 overflow-hidden p-0.5 shadow-inner">
+            <div className="relative w-full h-3 rounded-full bg-slate-100 border border-slate-300 overflow-hidden p-0.5 shadow-inner">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-orange-500 via-amber-300 via-slate-100 to-emerald-500 shadow-[0_0_15px_rgba(249,115,22,0.9)] relative"
+                className="h-full rounded-full bg-gradient-to-r from-orange-500 via-amber-400 via-emerald-400 to-emerald-600 shadow-[0_0_15px_rgba(249,115,22,0.6)] relative"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut" }}
               >
@@ -260,18 +260,18 @@ export default function PatrioticLoader({ onLoadingComplete }) {
             </div>
 
             {/* Bottom Key Feature Pills */}
-            <div className="pt-2 flex items-center justify-center space-x-5 text-[11px] font-bold text-slate-400 border-t border-slate-800/80">
-              <span className="flex items-center space-x-1.5 text-amber-400">
+            <div className="pt-2 flex items-center justify-center space-x-5 text-[11px] font-bold text-slate-600 border-t border-slate-200">
+              <span className="flex items-center space-x-1.5 text-amber-700">
                 <Lock className="w-3.5 h-3.5" />
                 <span>SHA-256 Crypto ID</span>
               </span>
               <span>•</span>
-              <span className="flex items-center space-x-1.5 text-blue-400">
+              <span className="flex items-center space-x-1.5 text-blue-700">
                 <Globe className="w-3.5 h-3.5" />
                 <span>Geo-Fencing HD</span>
               </span>
               <span>•</span>
-              <span className="flex items-center space-x-1.5 text-emerald-400">
+              <span className="flex items-center space-x-1.5 text-emerald-700">
                 <Navigation className="w-3.5 h-3.5" />
                 <span>AI Risk Score</span>
               </span>

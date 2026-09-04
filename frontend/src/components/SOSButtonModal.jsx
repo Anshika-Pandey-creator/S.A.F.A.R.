@@ -137,17 +137,17 @@ export default function SOSButtonModal({
 
       {/* Confirmation Modal to Trigger SOS */}
       {showConfirmModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-navy-900 border-2 border-red-500 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-5">
-            <div className="flex items-center space-x-3 text-red-500">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-white border-2 border-red-500 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-5">
+            <div className="flex items-center space-x-3 text-red-600">
               <ShieldAlert className="w-8 h-8" />
               <div>
-                <h3 className="text-xl font-black text-white">Confirm Emergency SOS</h3>
-                <p className="text-xs text-slate-400">Trigger immediate authority & police alert</p>
+                <h3 className="text-xl font-black text-slate-900">Confirm Emergency SOS</h3>
+                <p className="text-xs text-slate-500">Trigger immediate authority & police alert</p>
               </div>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               This action will dispatch your current GPS coordinates, transmit a high-priority distress alert to the State Tourist Command Desk, and initialize emergency response teams.
             </p>
 
@@ -155,14 +155,14 @@ export default function SOSButtonModal({
               <button
                 disabled={loading}
                 onClick={() => setShowConfirmModal(false)}
-                className="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl"
+                className="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300"
               >
                 Back / Cancel
               </button>
               <button
                 disabled={loading}
                 onClick={handleConfirmTrigger}
-                className="flex-1 py-2.5 bg-red-600 hover:bg-red-500 text-white font-extrabold text-xs rounded-xl shadow-lg glow-red"
+                className="flex-1 py-2.5 bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs rounded-xl shadow-lg"
               >
                 {loading ? 'Dispatching...' : 'CONFIRM SOS DISPATCH'}
               </button>
@@ -173,10 +173,10 @@ export default function SOSButtonModal({
 
       {/* Confirmation Modal to Cancel SOS */}
       {showCancelConfirmModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-navy-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
-            <h3 className="text-lg font-bold text-white">Cancel Emergency SOS Signal</h3>
-            <p className="text-xs text-slate-300">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-white border border-slate-200 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <h3 className="text-lg font-bold text-slate-900">Cancel Emergency SOS Signal</h3>
+            <p className="text-xs text-slate-600">
               Please confirm that you are safe and wish to stand down emergency dispatch units.
             </p>
 
@@ -185,21 +185,21 @@ export default function SOSButtonModal({
               value={cancelReason}
               onChange={(e) => setCancelReason(e.target.value)}
               placeholder="Reason for cancellation (e.g. Accidental click / Reached safe location)..."
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500"
             />
 
             <div className="flex items-center space-x-3 pt-2">
               <button
                 disabled={loading}
                 onClick={() => setShowCancelConfirmModal(false)}
-                className="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-xl"
+                className="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300"
               >
                 Keep SOS Active
               </button>
               <button
                 disabled={loading}
                 onClick={handleConfirmCancel}
-                className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-lg"
+                className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md"
               >
                 {loading ? 'Processing...' : 'Confirm Safety & Cancel'}
               </button>
