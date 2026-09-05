@@ -26,6 +26,8 @@ export default function TouristDashboard({
   const [loading, setLoading] = useState(false);
   const [useLiveGpsMode, setUseLiveGpsMode] = useState(false);
   const [show112Modal, setShow112Modal] = useState(false);
+  const [aiAdvice, setAiAdvice] = useState(null);
+  const [aiAdviceLoading, setAiAdviceLoading] = useState(false);
 
   // Native Browser Geolocation Hook
   const { coords, isLive, permissionStatus, error: gpsError, startTracking, stopTracking } = useBrowserGeolocation();
@@ -33,6 +35,40 @@ export default function TouristDashboard({
   useEffect(() => {
     setCurrentTourist(tourist);
   }, [tourist]);
+
+  // Live generative-AI explanation layer. The deterministic risk engine remains
+  // the source of truth for the score; the AI only explains the observed signals.
+  useEffect(() => {
+    const riskAnalysis = currentTourist?.riskAnalysis;
+    if (!riskAnalysis) return;
+
+    let cancelled = false;
+    const loadAiAdvice = async () => {
+      setAiAdviceLoading(true);
+      try {
+        const response = await fetch('/api/ai/safety-advice', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            riskAnalysis,
+            context: {
+              routeDeviationKm: currentTourist?.routeDeviationKm ?? null,
+              isLiveGps: currentTourist?.currentLocation?.isLiveGps ?? false
+            }
+          })
+        });
+        const data = await response.json();
+        if (!cancelled && data.success) setAiAdvice(data.advice);
+      } catch (error) {
+        console.error('AI advice error:', error);
+      } finally {
+        if (!cancelled) setAiAdviceLoading(false);
+      }
+    };
+
+    loadAiAdvice();
+    return () => { cancelled = true; };
+  }, [currentTourist?.riskAnalysis, currentTourist?.currentLocation?.isLiveGps, currentTourist?.routeDeviationKm]);
 
   // When live GPS coordinates change, post telemetry to API
   useEffect(() => {
@@ -326,7 +362,7 @@ export default function TouristDashboard({
           <DigitalIdCard digitalId={digitalId} tourist={currentTourist} />
 
           {/* Explainable AI Risk Panel */}
-          <ExplainableAIPanel riskAnalysis={currentTourist?.riskAnalysis} />
+          <ExplainableAIPanel riskAnalysis={currentTourist?.riskAnalysis} aiAdvice={aiAdvice} aiAdviceLoading={aiAdviceLoading} />
 
           {/* 112 India National Emergency API Gateway Trigger */}
           <div className="bg-gradient-to-r from-red-50 via-white to-slate-50 border border-red-200 rounded-2xl p-4 space-y-2 shadow-md">
